@@ -31,7 +31,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   app.use(async (req, res) => {
     // must run a timeout to wait for the previous file to finish writing
     setTimeout(function() {
-      deleteLocalFiles([res.locals.filteredpath]);
+      deleteLocalFiles([res.locals.filteredpath]); // fire the delete util
     }, 1500);
   });
 
