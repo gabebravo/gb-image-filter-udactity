@@ -25,7 +25,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
     const filteredpath = await filterImageFromURL(image_url);
     res.locals.filteredpath = filteredpath; // pass filteredpath to middleware
     res.sendFile(filteredpath); // send the file back in the response
-    next(); // trigger middleware
+    next(); // afterward, trigger middleware
   });
 
   app.use(async (req, res) => {
